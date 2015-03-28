@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{% block container %}
+    <div class="loginBox row">
+      <div class="col-md-7 left">
+    	<form action="/login" method="post" class="form-signin" rple="form" >
+        {% raw xsrf_form_html() %}
+        <h2 class="form-signin-heading">请登录</h2>
+        <input name="username" type="text" class="form-control" placeholder="User name" required autofocus>
+        <input name="password" type="password" class="form-control" placeholder="Password" required>
+        <div class="row">
+          <div class="col-md-8">
+            <label>
+              <input type="checkbox" name="remember-me" />下次自动登录
+            </label>
+          </div>
+          <div class="col-md-4 text-right">
+            <button class="btn btn-sm btn-primary" type="submit">登陆</button>
+          </div>
+        </div>
+    	</form>
+      </div>
+      <div class="col-md-5 right">
+          <h2>说明</h2>
+          <div>
+            <p>本系统不开放自助注册，如有需要，请联系管理员</p>
+          </div>
+      </div>
+    </div>	
+{% end %}

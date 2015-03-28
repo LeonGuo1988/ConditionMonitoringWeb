@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+{% block container %}
+    <div class="loginBox row">
+    	<div class="col-md-7 left">
+			<form class="form-signin" rple="form">
+				{% raw xsrf_form_html() %}
+				<h2 class="form-signin-heading">管理员登录</h2>
+	      		<input type="text" class="form-control" placeholder="User name" required autofocus>
+	      		<input type="password" class="form-control" placeholder="Password" required>
+	      		<button class="btn btn-sm btn-primary btn-block" type="submit">登陆</button>
+    	</form>
+      </div>
+      <div class="col-md-5 right">
+          <h2>说明</h2>
+          <div>
+          	<p>此页面为管理员登陆页面，普通用户请点击页面右上“普通用户入口”登录</p>
+          </div>
+      </div>
+    </div>	
+{% end %}
